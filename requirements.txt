@@ -1,0 +1,8 @@
+# Editor Requirements
+
+black
+flake8
+pycodestyle
+
+# \/ Program Requirements Below \/
+
