@@ -6,3 +6,8 @@ pycodestyle
 
 # \/ Program Requirements Below \/
 
+pyodbc
+pywebio
+pywebio_battery
+toml
+platform

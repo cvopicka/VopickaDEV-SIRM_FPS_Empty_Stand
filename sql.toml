@@ -1,0 +1,17 @@
+# SQL Statements for VopickaDEV-sirm_fps_empty_stand
+
+[SQL]
+candidate_stands = """\
+    SELECT ADMIN.STD_ID, Admin_Meta.HarvestYr
+    FROM ADMIN LEFT JOIN Admin_Meta ON ADMIN.STD_ID = Admin_Meta.Std_ID
+    WHERE (ADMIN.FLAG > 0) AND (ADMIN.RPT_YR=0);\
+"""
+
+#  STAND Actions including updating ADMIN RPT_YR
+check_stand = "SELECT STD_ID FROM STAND WHERE STD_ID = ?;"
+append_stand = "INSERT INTO STAND (STD_ID, RPT_YR, Flag_Yr) VALUES (?, ?, ?);"
+update_admin = "UPDATE ADMIN SET RPT_YR = ? WHERE STD_ID = ?;"
+
+# DBHCLS Actions
+check_dbhcls = "SELECT * FROM DBHCLS WHERE STD_ID = ?;"
+append_dbhcls = "INSERT INTO DBHCLS (STD_ID, RPT_YR, PlotTree) VALUES (?, ?, 1);"
