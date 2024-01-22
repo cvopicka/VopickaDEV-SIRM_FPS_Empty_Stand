@@ -20,6 +20,9 @@ Dealing with empty stands when FPS doesn't
 
 ## Introduction
 
+- Stands of interest must be in Admin_Meta
+- Harvest Year will be used as Rpt_Yr otherwise queried for year
+
 ## Usage
 
 ## Compiling (opt)
