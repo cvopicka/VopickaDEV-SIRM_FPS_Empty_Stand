@@ -74,7 +74,7 @@ finally:
 
     logging.basicConfig(
         filename=PurePath(
-            PurePath(sys.argv[0]).parent,
+            PurePath(sys.argv[0]).parent / "Logs",
             f"{PurePath(sys.argv[0]).stem}.log",
         ),
         format="%(asctime)s-[%(levelname)s]-(%(filename)s)-<%(funcName)s>-#%(lineno)d#-%(message)s",
@@ -130,10 +130,10 @@ if (
         maxsplit=1,
     )[0]
 ):
-    __copyright__ = f'Copyright {__created__.split(".",maxsplit=1)[0]} - {__version__.split(".",maxsplit=1)[0]}, {__maintainer__}'
+    __copyright__ = f'Copyright {__created__.split(".", maxsplit=1)[0]} - {__version__.split(".", maxsplit=1)[0]}, {__maintainer__}'
 else:
     __copyright__ = (
-        f'Copyright {__created__.split(".",maxsplit=1)[0]}, {__maintainer__}'
+        f'Copyright {__created__.split(".", maxsplit=1)[0]}, {__maintainer__}'
     )
 
 __copyrightstr__ = "This program is licensed under the BSD 3 Clause license\n\n"
