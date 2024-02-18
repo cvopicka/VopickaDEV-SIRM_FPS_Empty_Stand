@@ -51,7 +51,7 @@ try:
 
     trying = "sirm_spf_libs"
     __dependencies__.append(trying)
-    from sirm_spf_libs.Config.DatabaseDSN import database_dsn
+    from sirm_spf_libs.Config import database_dsn
 
     trying = "toml"
     __dependencies__.append(trying)
