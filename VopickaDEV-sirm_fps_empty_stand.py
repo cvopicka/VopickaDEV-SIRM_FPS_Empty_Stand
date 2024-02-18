@@ -49,9 +49,9 @@ try:
 
         asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
-    trying = "spf.Config"
+    trying = "sirm_spf_libs"
     __dependencies__.append(trying)
-    from spf.Config import database_dsn
+    from sirm_spf_libs.Config.DatabaseDSN import database_dsn
 
     trying = "toml"
     __dependencies__.append(trying)
@@ -266,9 +266,9 @@ def builder_stand(standyear: int) -> list:
             dbcurs.execute(sqlstrings["SQL"]["candidate_stands"])
 
             standstoprocess = [  # List comprehension
-                list(x)
-                if x[1] not in [None, 0]
-                else [x[0], standyear]  # Correct Harvest Yr if empty or zero
+                (
+                    list(x) if x[1] not in [None, 0] else [x[0], standyear]
+                )  # Correct Harvest Yr if empty or zero
                 for x in dbcurs.fetchall()
             ]
 
@@ -376,6 +376,7 @@ if __name__ == "__main__":
             weboutput.put_error("Please configure Admin_Meta and try again.")
             logger.error("Admin_meta not configured exiting")
             raise SystemExit
+        weboutput.put_success("Operation Completed")
 
     else:
         weboutput.put_error(
